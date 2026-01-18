@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Java学习笔记 Day02：变量与数据类型详解</title>
+      <link href="/2026/01/18/Java-Day0203/"/>
+      <url>/2026/01/18/Java-Day0203/</url>
+      
+        <content type="html"><![CDATA[<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>变量是程序的基本单位，表示内存中的一个区域。使用变量必须遵循 <strong>先声明再使用</strong> 的原则。</p><p><strong>三个基本要素</strong>：类型 + 名称 + 值</p><pre><code class="language-java">public class main{  public static void main(String[] args){     int age = 30;     double score = 88.9;     char gender = &#39;男&#39;;     String name = &#39;king&#39;;     System.out.println(name);  } }数据类型基本数据类型数值型：进行相等判断时，若是小数，应判断差值的绝对值是否在精度范围内。字符型 (char)：用单引号 &#39;&#39;。本质是一个整数 (Unicode码)，可以进行运算。布尔型 (boolean)：占一个字节，只有 true 和 false。引用数据类型包含：类、接口、数组。类型转换自动类型转换容量小的数据类型自动转换为容量大的数据类型。byte, short, char 之间不会自动转换，它们计算时首先转换为 int。boolean 不参与转换。强制类型转换将容量大的转换为容量小的，使用 (类型) 强制转换符，可能造成精度降低或溢出。String与基本类型转换基本转String：基本类型的值 + &quot;&quot;String转基本：调用包装类的 parse 方法 (如 Integer.parseInt)。---### 📝 Day 03：运算符大全**文件名建议：** `Java-Day03.md````markdown---title: Java学习笔记 Day03：运算符大全date: 2026-01-18 12:00:00tags:  - Java  - 运算符categories:  - Java学习路cover: /img/banner.jpgdescription: 算术、赋值、关系、逻辑、三元运算符的详细总结及标识符命名规范。---# 运算符## 1. 算术运算符包括 `+`, `-`, `*`, `/`, `%` (取模), `++`, `--`。&gt; 注意：Java中 `%` 的本质公式为 `a % b = a - a / b * b`。## 2. 赋值运算符- 基本赋值：`=`- 复合赋值：`+=`, `-=`, `*=` 等。- **细节**：复合赋值运算符会进行隐式的类型转换 (例如 `byte b = 2; b += 3;`)。## 3. 关系运算符结果都是 `boolean` 型 (`true` 或 `false`)。包括 `==`, `!=`, `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `instanceof`。## 4. 逻辑运算符- `&amp;` (逻辑与) vs `&amp;&amp;` (短路与)：`&amp;&amp;` 效率更高，如果第一个条件为 false，后面不再判断。- `|` (逻辑或) vs `||` (短路或)：`||` 效率更高，如果第一个条件为 true，后面不再判断。- `!` (取反)- `^` (异或)：不同为 true，相同为 false。## 5. 三元运算符语法：`条件表达式 ? 表达式1 : 表达式2;`# 标识符命名规范1. **包名**：所有字母小写 (如 `com.hsp.crm`)。2. **类名/接口名**：大驼峰 (如 `TankShotGame`)。3. **变量名/方法名**：小驼峰 (如 `tankShotGame`)。4. **常量名**：全大写，下划线连接 (如 `TAX_RATE`)。</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java学习路 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 变量 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java学习笔记 Day01：初识Java与转义字符</title>
+      <link href="/2026/01/18/Java-Day01/"/>
+      <url>/2026/01/18/Java-Day01/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Java中常用的转义字符"><a href="#Java中常用的转义字符" class="headerlink" title="Java中常用的转义字符"></a>Java中常用的转义字符</h1><p>在Java中，转义字符用于表示一些特殊的控制字符：</p><ol><li><code>\n</code>：换行</li><li><code>\r</code>：回车</li><li><code>\t</code>：制表符 (相当于Tab键)</li><li><code>\\</code>：反斜杠 <code>\</code></li><li><code>\&quot;</code>：相当于 <code>&quot;</code></li><li><code>\&#39;</code>：相当于 <code>&#39;</code></li><li><code>\b</code>：删除前一个字符</li><li><code>\f</code>：换页</li></ol><h1 id="Java语言的主要特点"><a href="#Java语言的主要特点" class="headerlink" title="Java语言的主要特点"></a>Java语言的主要特点</h1><p>Java 之所以流行，是因为它具备以下核心特性：</p><ol><li><strong>简单性</strong>：语法相对简单，解除了指针等复杂特性。</li><li><strong>面向对象</strong>：支持封装、继承、多态、抽象。</li><li><strong>跨平台性</strong>：一次编写，到处运行（依赖JVM）。</li><li><strong>安全性</strong>：无卸载操作，具备沙箱和权限控制机制。</li><li><strong>健壮性</strong>：强类型检查，完善异常机制处理。</li><li><strong>多线程</strong>：语言层面支持多线程编程。</li><li><strong>性能</strong>：编译与解释并存，JIT提升运行效率。</li><li><strong>可移植性</strong>：字节码与平台关联。</li><li><strong>生态丰富</strong>：标准库和第三方框架完善。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java学习路 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 基础语法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2026/01/17/hello-world/"/>
+      <url>/2026/01/17/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>大家好，我是 Doubleliu.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>我的第一篇博客</title>
+      <link href="/2026/01/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2026/01/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="大家好"><a href="#大家好" class="headerlink" title="大家好"></a>大家好</h2><p>这是我搭建博客的第一天！<strong>Hello World!</strong></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
